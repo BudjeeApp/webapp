@@ -4,6 +4,7 @@ specifiers:
   '@storybook/addon-essentials': ^7.0.2
   '@storybook/addon-interactions': ^7.0.2
   '@storybook/addon-links': ^7.0.2
+  '@storybook/addon-styling': ^0.3.2
   '@storybook/blocks': ^7.0.2
   '@storybook/nextjs': ^7.0.2
   '@storybook/react': ^7.0.2
@@ -17,6 +18,8 @@ specifiers:
   eslint-plugin-storybook: ^0.6.11
   next: 13.2.4
   postcss: ^8.4.21
+  postcss-loader: ^7.2.4
+  prettier: ^2.8.7
   react: 18.2.0
   react-dom: 18.2.0
   storybook: ^7.0.2
@@ -34,6 +37,7 @@ devDependencies:
   '@storybook/addon-essentials': 7.0.2_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-interactions': 7.0.2_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-links': 7.0.2_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-styling': 0.3.2_biqbaboplfbrettd7655fr4n2y
   '@storybook/blocks': 7.0.2_biqbaboplfbrettd7655fr4n2y
   '@storybook/nextjs': 7.0.2_yvdqr6mlypgcvldntnhnvftpae
   '@storybook/react': 7.0.2_ygqkwb4gg3aean7xjfdauovyqq
@@ -44,6 +48,8 @@ devDependencies:
   autoprefixer: 10.4.14_postcss@8.4.21
   eslint-plugin-storybook: 0.6.11_ycpbpc6yetojsgtrx3mwntkhsu
   postcss: 8.4.21
+  postcss-loader: 7.2.4_3ylyodscvgovqeqcf57pn4vjfi
+  prettier: 2.8.7
   storybook: 7.0.2
   tailwindcss: 3.3.1_postcss@8.4.21
   typescript: 4.9.5
@@ -3146,6 +3152,33 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
+  /@storybook/addon-styling/0.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ztKy9uU2yKBtvBp4/Km4LD1JCNNFHpXS33LjbeIfho0toRv100g8tUojrdnoRX1b2KVK6cqep5mJV0z2ak9hIQ==}
+    peerDependencies:
+      '@storybook/addons': ^6.5.8
+      '@storybook/api': ^6.5.8
+      '@storybook/components': ^6.5.8
+      '@storybook/core-events': ^6.5.8
+      '@storybook/manager-api': ^7.0.0-beta.56
+      '@storybook/theming': ^6.5.8
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      resolve-url-loader: ^5.0.0
+      sass-loader: ^10.4.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      resolve-url-loader:
+        optional: true
+      sass-loader:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: true
+
   /@storybook/addon-toolbars/7.0.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-tAxZ2+nUYsJdT1sx3BrmoMAZFM19+OzWJY6qSnbEq5zoRgvGZaXGR6tLMKydDoHQBU9Ta9YHGo7N7u7h1C23yg==}
     peerDependencies:
@@ -5418,6 +5451,20 @@ packages:
       typescript: '>=3'
     dependencies:
       '@types/node': 16.18.23
+      cosmiconfig: 8.1.3
+      typescript: 4.9.5
+    dev: true
+
+  /cosmiconfig-typescript-loader/4.3.0_yixapxyyovfdq2tgmxcaxqzaky:
+    resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@types/node': '*'
+      cosmiconfig: '>=7'
+      ts-node: '>=10'
+      typescript: '>=3'
+    dependencies:
+      '@types/node': 18.15.0
       cosmiconfig: 8.1.3
       typescript: 4.9.5
     dev: true
@@ -8403,6 +8450,30 @@ packages:
       lilconfig: 2.1.0
       postcss: 8.4.21
       yaml: 1.10.2
+    dev: true
+
+  /postcss-loader/7.2.4_3ylyodscvgovqeqcf57pn4vjfi:
+    resolution: {integrity: sha512-F88rpxxNspo5hatIc+orYwZDtHFaVFOSIVAx+fBfJC1GmhWbVmPWtmg2gXKE1OxJbneOSGn8PWdIwsZFcruS+w==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      postcss: ^7.0.0 || ^8.0.1
+      ts-node: '>=10'
+      typescript: '>=4'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      ts-node:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      cosmiconfig: 8.1.3
+      cosmiconfig-typescript-loader: 4.3.0_yixapxyyovfdq2tgmxcaxqzaky
+      klona: 2.0.6
+      postcss: 8.4.21
+      semver: 7.3.8
+      typescript: 4.9.5
+    transitivePeerDependencies:
+      - '@types/node'
     dev: true
 
   /postcss-loader/7.2.4_bzlrh6o4jsufuidrkk7dkffm3i:
