@@ -1,38 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Webapp
+
+Welcome to the webapp of Budjee. This is a Typescript/React project bootstrapped with [Next.js](https://nextjs.org/).
+We are using the latest version of Next.js and React (v13.2.4 and v18.2.0 respectively at the time of writing).
+And we are using Next.js's the experimental `/app` which introduces new concepts of layouts, loading and error components, 
+and leverages React's server components. All of which I do not understand its implications and its advantages.
+I just figured it would be cool to use the latest.
+Please read this [_Rendering Fundamentals_](https://beta.nextjs.org/docs/rendering/fundamentals) to get started on what Next.js 13 brings
+
+We follow the [atomic design principle](https://bradfrost.com/blog/post/atomic-web-design/) for building Webapp.
+
+I'm very new to writing frontend so if there's anything that you think should be changed. Let's talk about it and make the update!
+
+## Frameworks & Libraries
+
+* [Next.js](https://nextjs.org/) (Rendering framework)
+* [Tailwind CSS](https://tailwindcss.com/) (CSS framework)
+* [Storybook](https://storybook.js.org/) (UI dev tool)
+* [Jest](https://jestjs.io/) (Unit test framework)
+* [Playwright](https://playwright.dev/) (E2E test framework) 
+
 
 ## Getting Started
 
-First, run the development server:
+We use node v18.15.0 and [pnpm](https://pnpm.io/) as our package manager.
+
+After installing the packages with `pnpm install`, you can run the development server by running
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Storybook
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+We use Storybook to build and test our components in isolation. You can run storybook by running
+```bash
+pnpm storybook
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### _To Be Implemented_
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We use playwright to e2e test our webapp.
