@@ -36,8 +36,3 @@ export const Date: Story = {
     type: 'date',
   },
 };
-
-export const Small: Story = {
-  args: {
-  },
-};
